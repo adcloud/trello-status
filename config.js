@@ -1,3 +1,6 @@
+var moment = require('moment');
+
+
 var api_key, api_token;
 
 if (process.env.TRELLO_API_KEY) {
@@ -13,6 +16,8 @@ if (process.env.TRELLO_API_TOKEN) {
 	throw new Error("Environment variable (TRELLO_API_TOKEN) not set, but required!");
 	api_token = "";
 }
+
+exports.passed_date = moment().subtract('weeks', 1).toDate(); // last week
 
 exports.api_key = api_key;
 exports.api_token = api_token;

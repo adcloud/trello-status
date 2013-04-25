@@ -44,5 +44,4 @@ var cb = function(data, callback) {
 
 }
 
-var passed_date = new Date(2013, 4-1, 24);
-stats.createStatus(config.api_key, config.api_token, boards, passed_date, cb);
+stats.createStatus(config.api_key, config.api_token, boards, config.passed_date, cb);
