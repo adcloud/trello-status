@@ -36,8 +36,6 @@ var cb = function(data, callback) {
     //console.log(' - for more info contact ' + card.id_members) //WRONG owner
       console.log('   Details see at ' + card.url );
     })
-    console.log(label)
-
   }
   
 
