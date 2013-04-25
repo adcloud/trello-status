@@ -30,11 +30,12 @@ var cb = function(data, callback) {
     var cards = cards_by_label[label];
     cards.forEach(function(card) {
       var comment = card.comments[0]; //TODO
-      console.log(' - Update on "' + card.card_name + '": (Currently in ' + card.list_name + ')');
-      console.log(moment(comment.date).format('   DD.MM.:'), comment.text);
+      console.log(' - "' + card.card_name + '" (Currently in ' + card.list_name + ')');
+      console.log('   Comment from ' + moment(comment.date).format('DD.MM.:'), comment.text);
     //console.log(' ' + comment.text);
     //console.log(' - for more info contact ' + card.id_members) //WRONG owner
-      console.log('   Details see at ' + card.url );
+      console.log('   Details: ' + card.url );
+      console.log('   Contact: ' + card.members.join() );
     })
   }
   
