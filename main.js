@@ -3,7 +3,7 @@ var stats = require('./lib/status'),
    moment = require('moment');
 
 var boards = [];
-boards.push({ board_name : "Product Board", board_id: '4f71c65cdbc70d8a1a8bcf85'})
+boards.push({ board_name : 'Product Board', board_id: '4f71c65cdbc70d8a1a8bcf85'})
 
 var cb = function(data, callback) {
   console.log('\n\n\nSummary:')
@@ -12,10 +12,11 @@ var cb = function(data, callback) {
     var label = card.labels[0]; //TODO
 
     console.log('\nTeam: ' + label.name);
-    console.log(' Update on "' + card.card_name + '" in ' + card.list_name);
-    console.log(moment(comment.date).format(' - DD.MM.'), ': ', comment.text);
-    console.log(' - for more info contact ' + card.owner)
-    console.log(' - see also ' + card.url )      
+    console.log(' Update on "' + card.card_name + '". Currently in ' + card.list_name);
+    //console.log(moment(comment.date).format(' - DD.MM.'), ': ', comment.text);
+    console.log(' ' + comment.text);
+    //console.log(' - for more info contact ' + card.id_members) //WRONG owner
+    console.log(' See also ' + card.url );
   });
 }
 
