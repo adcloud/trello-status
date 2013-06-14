@@ -22,18 +22,26 @@ var cardsByLabel = function(cards) {
 }
 
 var cb = function(data, callback) {
-  console.log('\n\n\nSummary:')
+  console.log('\nh1. Productstammtisch:' + moment(new Date).format('DD.MM.YYYY'))
+  console.log('Hi all')
+  console.log('this is an update from our product developement efforts.')
+  console.log('>>> TODO: personal note <<<:')
+  console.log('Matthias\n')
+  
+  console.log('TOC:')
+  console.log('{toc:printable=true|style=square|maxLevel=2|indent=5px|minLevel=2|class=bigpink|exclude=[1//2]|type=list|outline=true|include=.*}')
 
   var cards_by_label = cardsByLabel(data);
   for (var label in cards_by_label) {
-    console.log('\n\n\nTeam: ' + label);
+    console.log('\nh2. Team: ' + label);
     var cards = cards_by_label[label];
     cards.forEach(function(card) {
-      console.log(' - "' + card.card_name + '" (Currently in ' + card.list_name + ')');
-      console.log('   Details: ' + card.url );
-      console.log('   Contact: ' + card.members.join() );
+      console.log('\nh3. ' + card.card_name );
+      console.log(' - Status: ' + card.list_name );
+      console.log(' - Details: ' + card.url );
+      console.log(' - Contact: ' + card.members.join() );
       card.comments.forEach(function(comment) {
-        console.log('   Comment from ' + moment(comment.date).format('DD.MM.:'), comment.text);
+        console.log('   - Comment from ' + moment(comment.date).format('DD.MM.:'), comment.text);
       })
     //console.log(' ' + comment.text);
     //console.log(' - for more info contact ' + card.id_members) //WRONG owner
